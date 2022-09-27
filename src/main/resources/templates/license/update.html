@@ -20,6 +20,11 @@
         <label for="version">Version <span class="badge badge-danger">Mandatory</span></label>
         <input type="text" id="version" class="form-control" placeholder="7.9.0" th:field="*{version}" />
         <span th:if="${#fields.hasErrors('version')}" th:errors="*{version}" style="color: red"></span>
+
+        <label for="license_key">License Key </label>
+        <input type="text" id="license_key" class="form-control" placeholder="<license key value>" th:field="*{license_key}" />
+        <span th:if="${#fields.hasErrors('license_key')}" th:errors="*{license_key}" style="color: red"></span>
+
       </div>
 
       <button type="submit" class="btn btn-primary">Confirm</button>

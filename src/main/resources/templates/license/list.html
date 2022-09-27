@@ -11,8 +11,9 @@
     <thead class="thead-dark">
       <tr>
         <th width="10%">ID</th>
-        <th width="70%">Product Name</th>
+        <th width="60%">Product Name</th>
         <th width="10%">Version</th>
+        <th width="10%">License Key</th>
         <th width="10%">Delete</th>
       </tr>
     </thead>
@@ -25,6 +26,10 @@
         </td>
         <td>
           <a th:text="${license.version}" th:href="@{/licenses/{id}/update/(id=${license.id})}">
+          </a>
+        </td>
+        <td>
+          <a th:text="${license.license_key}" th:href="@{/licenses/{id}/update/(id=${license.id})}">
           </a>
         </td>
         <td>

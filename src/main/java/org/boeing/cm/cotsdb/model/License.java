@@ -20,7 +20,7 @@ import lombok.Data;
 public class License {
 
   /** Sequence Name */
-  private static final String SEQUENCE_NAME = "customer_id_seq";
+  private static final String SEQUENCE_NAME = "id";
 
   /** ID */
   @Id
@@ -32,6 +32,13 @@ public class License {
   @NotBlank
   private String product_name;
 
+  /** Version Number */
   @Column(columnDefinition = "text")
   private String version;
+
+  /** License Key */
+  @Column(columnDefinition = "text")
+  private String license_key;
+
+
 }
