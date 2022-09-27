@@ -38,5 +38,12 @@ public class License {
   @Column(columnDefinition = "text")
   private String license_key;
 
+  /** License Start Date */
+  @Column(columnDefinition = "date")
+  private String start_date;
+
+  /** License Expiration Date */
+  @Column(columnDefinition = "date")
+  private String expiration_date;
 
 }

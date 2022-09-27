@@ -25,6 +25,14 @@
         <input type="text" id="license_key" class="form-control" placeholder="<license key value>" th:field="*{license_key}" />
         <span th:if="${#fields.hasErrors('license_key')}" th:errors="*{license_key}" style="color: red"></span>
 
+        <label for="start_date">Start</label>
+        <input type="text" id="start_date" class="form-control" placeholder="<yyyy-mm-dd>" th:field="*{start_date}" />
+        <span th:if="${#fields.hasErrors('start_date')}" th:errors="*{start_date}" style="color: red"></span>
+
+        <label for="expiration_date">Expiration</label>
+        <input type="text" id="expiration_date" class="form-control" placeholder="<yyyy-mm-dd>" th:field="*{expiration_date}" />
+        <span th:if="${#fields.hasErrors('expiration_date')}" th:errors="*{expiration_date}" style="color: red"></span>
+
       </div>
 
       <button type="submit" class="btn btn-primary">Confirm</button>
