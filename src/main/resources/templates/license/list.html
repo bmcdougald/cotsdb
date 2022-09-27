@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="fragments/layout :: head('List Products')">
+</head>
+
+<body>
+  <div th:replace="fragments/layout :: navbar"></div>
+
+  <table class="table table-bordered table-hover">
+    <thead class="thead-dark">
+      <tr>
+        <th width="10%">ID</th>
+        <th width="70%">Product Name</th>
+        <th width="10%">Version</th>
+        <th width="10%">Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr th:each="license:${license}">
+        <td th:text="${license.id}"></td>
+        <td>
+          <a th:text="${license.product_name}" th:href="@{/licenses/{id}/update/(id=${license.id})}">
+          </a>
+        </td>
+        <td>
+          <a th:text="${license.version}" th:href="@{/licenses/{id}/update/(id=${license.id})}">
+          </a>
+        </td>
+        <td>
+          <a th:href="@{/licenses/{id}/delete/(id=${license.id})}" onClick="return window.confirm('Are you sure you want to delete Product?')">
+            <i class="far fa-trash-alt fa-lg" aria-hidden=”true”></i>
+          </a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</body>
+
+</html>
