@@ -21,15 +21,6 @@ import static javax.persistence.GenerationType.AUTO;
 @Data
 public class License {
 
-//  /** Sequence Name */
-//  private static final String SEQUENCE_NAME = "id";
-//
-//  /** ID */
-//  @Id
-//  @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = SEQUENCE_NAME)
-//  @SequenceGenerator(name = SEQUENCE_NAME, sequenceName = SEQUENCE_NAME, allocationSize = 1)
-//  private Long id;
-
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   @Column(name = "id", nullable = false)
