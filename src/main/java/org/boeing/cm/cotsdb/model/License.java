@@ -11,6 +11,8 @@ import javax.persistence.Column;
 
 import lombok.Data;
 
+import static javax.persistence.GenerationType.AUTO;
+
 /**
  * License Class.
  */
@@ -19,13 +21,18 @@ import lombok.Data;
 @Data
 public class License {
 
-  /** Sequence Name */
-  private static final String SEQUENCE_NAME = "id";
+//  /** Sequence Name */
+//  private static final String SEQUENCE_NAME = "id";
+//
+//  /** ID */
+//  @Id
+//  @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = SEQUENCE_NAME)
+//  @SequenceGenerator(name = SEQUENCE_NAME, sequenceName = SEQUENCE_NAME, allocationSize = 1)
+//  private Long id;
 
-  /** ID */
   @Id
-  @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = SEQUENCE_NAME)
-  @SequenceGenerator(name = SEQUENCE_NAME, sequenceName = SEQUENCE_NAME, allocationSize = 1)
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  @Column(name = "id", nullable = false)
   private Long id;
 
   /** Product Name */

@@ -16,8 +16,8 @@ spring:
   jpa:
     hibernate:
 
-      # @Always drop the table corresponding to Entity&create.
-      ddl-auto: none
+      # @Always drop the table corresponding to Entity & create.
+      ddl-auto: update
 
       # define schema
       properties:
