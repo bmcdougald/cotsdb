@@ -8,24 +8,35 @@
 <body>
   <div th:replace="fragments/layout :: navbar"></div>
 
-  <table class="table table-bordered table-hover" id="productTable">
+  <table class="table table-bordered table-hover table-striped" id="productTable">
     <thead class="thead-dark">
       <tr>
-        <th width="10%">ID</th>
-        <th width="45%">Product Name</th>
-        <th width="10%">Version</th>
-        <th width="10%">License Key</th>
+        <th width="5%">ID</th>
+        <th width="5%">Environment</th>
+        <th width="30%">Product Name</th>
+        <th width="10%">Vendor</th>
+        <th width="5%">Version</th>
+        <th width="20%">License Key</th>
         <th width="5%">Start</th>
         <th width="5%">Expiration</th>
-        <th width="5%">MSAccess</th>
-        <th width="10%">Delete</th>
+        <th width="5%">Media</th>
+        <th width="5%">PO Number</th>
+        <th width="5%">Delete</th>
       </tr>
     </thead>
     <tbody>
       <tr th:each="license:${license}">
         <td th:text="${license.id}"></td>
         <td>
+          <a th:text="${license.environment}" th:href="@{/licenses/{id}/update/(id=${license.id})}">
+          </a>
+        </td>
+        <td>
           <a th:text="${license.product_name}" th:href="@{/licenses/{id}/update/(id=${license.id})}">
+          </a>
+        </td>
+        <td>
+          <a th:text="${license.vendor}" th:href="@{/licenses/{id}/update/(id=${license.id})}">
           </a>
         </td>
         <td>
@@ -45,7 +56,11 @@
           </a>
         </td>
         <td>
-          <a th:text="${license.access_migration}" th:href="@{/licenses/{id}/update/(id=${license.id})}">
+          <a th:text="${license.media_type}" th:href="@{/licenses/{id}/update/(id=${license.id})}">
+          </a>
+        </td>
+        <td>
+          <a th:text="${license.po_number}" th:href="@{/licenses/{id}/update/(id=${license.id})}">
           </a>
         </td>
         <td>

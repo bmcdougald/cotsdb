@@ -24,6 +24,10 @@ public class License {
   @Column(name = "id", nullable = false)
   private Long id;
 
+  /** Environment */
+  @NotBlank
+  private String environment;
+
   /** Product Name */
   @NotBlank
   private String product_name;
@@ -31,6 +35,10 @@ public class License {
   /** Version Number */
   @Column(columnDefinition = "text")
   private String version;
+
+  /** Vendor */
+  @NotBlank
+  private String vendor;
 
   /** License Key */
   @Column(columnDefinition = "text")
@@ -46,8 +54,16 @@ public class License {
   @DateTimeFormat(pattern = "yyyy-MM-dd")
   private Date expiration_date;
 
-  /** Access Migration */
-  @Column(columnDefinition = "access_migration")
-  private boolean access_migration;
+  /** Media Type */
+  @Column(columnDefinition = "text")
+  private String media_type;
+
+  /** PO Number */
+  @Column(columnDefinition = "text")
+  private String po_number;
+
+//  /** Access Migration */
+//  @Column(columnDefinition = "access_migration")
+//  private boolean access_migration;
 
 }
