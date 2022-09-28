@@ -1,15 +1,13 @@
 package org.boeing.cm.cotsdb.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
-import javax.persistence.SequenceGenerator;
+import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
-import javax.persistence.Column;
-
 import lombok.Data;
+import org.springframework.format.annotation.DateTimeFormat;
+
+
+import java.time.ZonedDateTime;
+import java.util.Date;
 
 import static javax.persistence.GenerationType.AUTO;
 
@@ -40,10 +38,16 @@ public class License {
 
   /** License Start Date */
   @Column(columnDefinition = "date")
-  private String start_date;
+  @DateTimeFormat(pattern = "yyyy-MM-dd")
+  private Date start_date;
 
   /** License Expiration Date */
   @Column(columnDefinition = "date")
-  private String expiration_date;
+  @DateTimeFormat(pattern = "yyyy-MM-dd")
+  private Date expiration_date;
+
+  /** Access Migration */
+  @Column(columnDefinition = "access_migration")
+  private boolean access_migration;
 
 }

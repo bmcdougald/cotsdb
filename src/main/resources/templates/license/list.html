@@ -12,11 +12,12 @@
     <thead class="thead-dark">
       <tr>
         <th width="10%">ID</th>
-        <th width="50%">Product Name</th>
+        <th width="45%">Product Name</th>
         <th width="10%">Version</th>
         <th width="10%">License Key</th>
         <th width="5%">Start</th>
         <th width="5%">Expiration</th>
+        <th width="5%">MSAccess</th>
         <th width="10%">Delete</th>
       </tr>
     </thead>
@@ -41,6 +42,10 @@
         </td>
         <td>
           <a th:text="${license.expiration_date}" th:href="@{/licenses/{id}/update/(id=${license.id})}">
+          </a>
+        </td>
+        <td>
+          <a th:text="${license.access_migration}" th:href="@{/licenses/{id}/update/(id=${license.id})}">
           </a>
         </td>
         <td>
