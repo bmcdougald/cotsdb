@@ -71,17 +71,24 @@
       </tr>
     </tbody>
   </table>
-
-  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css">
-  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/fixedheader/3.2.3/css/fixedHeader.dataTables.min.css">
+<!--  Following two lines pull from remote, added local resources for them below -->
+<!--  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css">-->
+<!--  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/fixedheader/3.2.3/css/fixedHeader.dataTables.min.css">-->
+  <link rel="stylesheet" type="text/css" href="@{/assets/css/jquery.dataTables.min.css}">
+  <link rel="stylesheet" type="text/css" href="@{/assets/css/fixedHeader.dataTables.min.css}">
+  <link rel="stylesheet" type="text/css" th:href="@{/assets/css/style.css}" />
   <style type="text/css" class="init">
 	thead input {
 		width: 100%;
 	}
   </style>
-  <script type="text/javascript" language="javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
-  <script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
-  <script type="text/javascript" language="javascript" src="https://cdn.datatables.net/fixedheader/3.2.3/js/dataTables.fixedHeader.min.js"></script>
+<!--  Following three lines pull from remote, added local resources for them below -->
+<!--  <script type="text/javascript" language="javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>-->
+<!--  <script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>-->
+<!--  <script type="text/javascript" language="javascript" src="https://cdn.datatables.net/fixedheader/3.2.3/js/dataTables.fixedHeader.min.js"></script>-->
+  <script type="text/javascript" language="javascript" src="/assets/js/jquery-3.5.1.js"></script>
+  <script type="text/javascript" language="javascript" src="/assets/js/jquery.dataTables.min.js"></script>
+  <script type="text/javascript" language="javascript" src="/assets/js/dataTables.fixedHeader.min.js"></script>
   <script type="text/javascript" class="init">
     $(document).ready(function () {
         // Setup - add a text input to each footer cell
