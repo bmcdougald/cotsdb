@@ -13,12 +13,13 @@
       <tr>
         <th width="5%">ID</th>
         <th width="5%">Environment</th>
-        <th width="30%">Product Name</th>
+        <th width="25%">Product Name</th>
         <th width="10%">Vendor</th>
         <th width="5%">Version</th>
         <th width="20%">License Key</th>
         <th width="5%">Start</th>
         <th width="5%">Expiration</th>
+        <th width="5%">Host</th>
         <th width="5%">Media</th>
         <th width="5%">PO Number</th>
         <th width="5%">Delete</th>
@@ -53,6 +54,10 @@
         </td>
         <td>
           <a th:text="${license.expiration_date}" th:href="@{/licenses/{id}/update/(id=${license.id})}">
+          </a>
+        </td>
+        <td>
+          <a th:text="${license.equipment}" th:href="@{/licenses/{id}/update/(id=${license.id})}">
           </a>
         </td>
         <td>

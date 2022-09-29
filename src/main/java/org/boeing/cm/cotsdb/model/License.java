@@ -54,6 +54,10 @@ public class License {
   @DateTimeFormat(pattern = "yyyy-MM-dd")
   private Date expiration_date;
 
+  /** Equipment its hosted on */
+  @Column(columnDefinition = "text")
+  private String equipment;
+
   /** Media Type */
   @Column(columnDefinition = "text")
   private String media_type;

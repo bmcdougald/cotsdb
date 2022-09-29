@@ -30,6 +30,18 @@
         <label for="expiration_date">Expiration</label>
         <input type="text" id="expiration_date" class="form-control" placeholder="<yyyy-mm-dd>" th:field="*{expiration_date}" />
         <span th:if="${#fields.hasErrors('expiration_date')}" th:errors="*{expiration_date}" style="color: red"></span>
+        <br/>
+        <label for="equipment">Host</label>
+        <input type="text" id="equipment" class="form-control" placeholder="<Hostname-follow with (VM) if its a VM>" th:field="*{equipment}" />
+        <span th:if="${#fields.hasErrors('equipment')}" th:errors="*{equipment}" style="color: red"></span>
+        <br/>
+        <label for="media_type">Media Type</label>
+        <input type="text" id="media_type" class="form-control" placeholder="(Example) Digital, DVD, etc" th:field="*{media_type}" />
+        <span th:if="${#fields.hasErrors('media_type')}" th:errors="*{media_type}" style="color: red"></span>
+        <br/>
+        <label for="po_number">PO Number</label>
+        <input type="text" id="po_number" class="form-control" placeholder="<PO or Contract # for the purchase>" th:field="*{po_number}" />
+        <span th:if="${#fields.hasErrors('po_number')}" th:errors="*{po_number}" style="color: red"></span>
 
       </div>
 
