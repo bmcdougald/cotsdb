@@ -15,10 +15,8 @@ spring:
 
   jpa:
     hibernate:
-
       # @Always drop the table corresponding to Entity & create.
       ddl-auto: update
-
       # define schema
       properties:
         hibernate:
@@ -26,3 +24,5 @@ spring:
 
     thymeleaf:
       prefix: classpath:/templates/
+
+    show-sql: true
