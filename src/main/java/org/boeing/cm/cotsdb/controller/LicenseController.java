@@ -28,6 +28,7 @@ public class LicenseController {
   private static final String PATH_LIST = "license/list";
   private static final String PATH_CREATE = "license/create";
   private static final String PATH_UPDATE = "license/update";
+  private static final String PATH_READ = "user/dashboard";
 
   /** Model Attribute Name */
   private static final String MODEL_ATTRIBUTE_NAME = "license";
@@ -35,6 +36,18 @@ public class LicenseController {
   /** License Repository */
   @Autowired
   private LicenseRepository licenseRepository;
+
+  /**
+   * Display the Read-Only List
+   *
+   * @param model model
+   * @return Transition destination
+   */
+  @GetMapping(value = "/dashboard")
+  public String readOnly(Model model) {
+    model.addAttribute(MODEL_ATTRIBUTE_NAME, licenseRepository.findAll(Sort.by("id")));
+    return PATH_READ;
+  }
 
   /**
    * Display the List Screen
