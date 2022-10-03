@@ -13,7 +13,7 @@
       <tr>
         <th width="5%">ID</th>
         <th width="5%">Environment</th>
-        <th width="25%">Product Name</th>
+        <th width="30%">Product Name</th>
         <th width="10%">Vendor</th>
         <th width="5%">Version</th>
         <th width="20%">License Key</th>
@@ -22,7 +22,6 @@
         <th width="5%">Host</th>
         <th width="5%">Media</th>
         <th width="5%">PO Number</th>
-        <th width="5%">Delete</th>
       </tr>
     </thead>
     <tbody>
@@ -68,11 +67,7 @@
           <a th:text="${license.po_number}" th:href="@{/licenses/{id}/update/(id=${license.id})}">
           </a>
         </td>
-        <td>
-          <a th:href="@{/licenses/{id}/delete/(id=${license.id})}" onClick="return window.confirm('Are you sure you want to delete Product?')">
-            <i class="far fa-trash-alt fa-lg" aria-hidden=”true” style='color:red'></i>
-          </a>
-        </td>
+
       </tr>
     </tbody>
   </table>
