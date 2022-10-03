@@ -1,7 +1,7 @@
 package org.boeing.cm.cotsdb.controller;
 
 import org.boeing.cm.cotsdb.model.License;
-import org.boeing.cm.cotsdb.model.LicenseRepository;
+import org.boeing.cm.cotsdb.repository.LicenseRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Controller;
