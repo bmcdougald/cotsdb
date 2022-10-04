@@ -31,7 +31,7 @@ public class AuthController {
     @RequestMapping(value = {"/register"}, method = RequestMethod.POST)
     public String registerUser(Model model, @Valid User user, BindingResult bindingResult){
         if(bindingResult.hasErrors()){
-            model.addAttribute("successMessage", "User registered successfully!");
+//            model.addAttribute("successMessage", "User registered successfully!");
             model.addAttribute("bindingResult", bindingResult);
             return "auth/register";
         }

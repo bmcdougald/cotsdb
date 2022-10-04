@@ -30,10 +30,12 @@ public class User implements UserDetails  {
     private int id;
 
     @NotNull(message = "First Name cannot be empty")
+    @Length(min = 2, message = "Please enter a valid First Name")
     @Column(name = "firstName")
     private String firstName;
 
     @NotNull(message = "Last Name cannot be empty")
+    @Length(min = 2, message = "Please enter a valid Last Name")
     @Column(name = "lastName")
     private String lastName;
 

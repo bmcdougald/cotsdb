@@ -40,10 +40,24 @@
             <i class="fas fa-list fa-lg" aria-hidden=”true”></i> List Products
           </a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link" th:href="@{/register/}">
+            <i class="far fa-user fa-lg" aria-hidden=”true”></i> Add User
+          </a>
+        </li>
+      </ul>
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <form th:action="@{/login}" method="POST" class="form-signin form-inline">
+            <input type="text" name="email" style="margin-right:10px; border-radius: 5px;" th:placeholder="Email" /> <br /><br />
+            <input type="password" style="margin-right:10px; border-radius: 5px;" th:placeholder="Password" name="password" /> <br /><br />
+            <button type="Submit" class="btn btn-secondary btn-sm" style="margin-right:10px" th:text="Login"></button><br />
+            <a class="btn btn-secondary btn-sm" th:href="@{/logout}" role="button">Log out</a>
+            <div th:if="${param.error}"><p>Email or Password is invalid.</p></div> <br />
+          </form>
+        </li>
       </ul>
     </div>
-    <a class="btn btn-info float-right" th:href="@{/logout}" role="button">Log out</a>
-
   </nav>
 </body>
 

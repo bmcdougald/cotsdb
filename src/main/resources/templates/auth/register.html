@@ -2,27 +2,69 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>Login</title>
+    <title>Add New User</title>
+    <link rel="stylesheet" th:href="@{/assets/css/bootstrap.min.css}">
+    <link rel="stylesheet" th:href="@{/assets/css/all.min.css}">
+    <script type="text/javascript" language="javascript" src="/assets/js/jquery.min.js"></script>
+    <script type="text/javascript" language="javascript" src="/assets/js/bootstrap.min.js"></script>
+    <style>
+        .gradient-custom {
+        /* fallback for old browsers */
+        background: #5E81AC;
+
+        /* Chrome 10-25, Safari 5.1-6 */
+        background: -webkit-linear-gradient(to bottom, rgba(94, 129, 172, 1), rgba(76, 86, 106, 1));
+
+        /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+        background: linear-gradient(to bottom, rgba(94, 129, 172, 1), rgba(76, 86, 106, 1))
+        }
+    </style>
 </head>
-<body>
-<form th:action="@{/register}" th:object="${user}" method="post">
-    <h3>Registration</h3>
-    <input type="text" th:field="*{firstName}" placeholder="First Name" /> <br/><br/>
-    <input type="text" th:field="*{lastName}" placeholder="Last Name" /> <br/><br/>
-    <input type="text" th:field="*{email}" placeholder="Email" /> <br/><br/>
-    <input type="password" th:field="*{password}" placeholder="Password" /> <br/><br/>
-    <select th:field="*{role}" required>
-        <option value="">Select</option>
-        <option value="ADMIN">ADMIN</option>
-        <option value="USER">USER</option>
-    </select> <br/><br/>
-    <button type="submit">Register</button> | <a th:href="@{|/login|}" th:text="'Log in'"></a>
-    <span th:utext="${successMessage}"></span>
-    <div th:if="${bindingResult!=null && bindingResult.getAllErrors()!=null}">
-        <ul th:each="data : ${bindingResult.getAllErrors()}">
-            <li th:text="${data.getObjectName() + ' :: ' + data.getDefaultMessage()}"></li>
-        </ul>
+<body class="vh-100 gradient-custom">
+    <div class="container py-5 h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+                <div class="card bg-dark text-white" style="border-radius: 1rem;">
+                    <div class="card-body p-5 text-center">
+                        <div class="mb-md-5 mt-md-4 pb-5">
+                            <h2 class="fw-bold mb-2 text-uppercase">Add New User</h2>
+                            <p class="text-white-50 mb-5">All fields are REQUIRED!</p>
+
+                            <form th:action="@{/register}" th:object="${user}" method="post">
+                                <div class="form-outline form-white mb-4">
+                                    <input type="text" th:field="*{firstName}" placeholder="First Name" class="form-control"/>
+                                </div>
+                                <div class="form-outline form-white mb-4">
+                                    <input type="text" th:field="*{lastName}" placeholder="Last Name" class="form-control"/>
+                                </div>
+                                <div class="form-outline form-white mb-4">
+                                    <input type="text" th:field="*{email}" placeholder="Email" class="form-control"/>
+                                </div>
+                                <div class="form-outline form-white mb-4">
+                                    <input type="password" th:field="*{password}" placeholder="Password" class="form-control"/>
+                                </div>
+                                <div class="form-outline form-white mb-4">
+                                    <select th:field="*{role}" required class="selectpicker form-control btn btn-outline-light btn-md px-5" >
+                                        <option value="">Role</option>
+                                        <option value="ADMIN">ADMIN</option>
+                                        <option value="USER">USER</option>
+                                    </select> <br/><br/>
+                                </div>
+                                <button class="btn btn-outline-light btn-md px-5" type="submit" style="margin-right:10px;">Register</button>
+                                <button class="btn btn-outline-light btn-md px-5" type="button" onclick="location.href='/licenses/';">Home</button>
+                                <span th:utext="${successMessage}"></span>
+                                <div th:if="${bindingResult!=null && bindingResult.getAllErrors()!=null}">
+                                    <ul th:each="data : ${bindingResult.getAllErrors()}">
+                                        <li th:text="${data.getObjectName() + ' :: ' + data.getDefaultMessage()}"></li>
+                                    </ul>
+                                </div>
+
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-</form>
 </body>
 </html>
