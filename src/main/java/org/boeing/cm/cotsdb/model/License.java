@@ -33,6 +33,7 @@ public class License {
   private String product_name;
 
   /** Version Number */
+  @NotBlank
   @Column(columnDefinition = "text")
   private String version;
 
