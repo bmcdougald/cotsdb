@@ -30,7 +30,7 @@ dependencies {
 //	implementation 'org.webjars:bootstrap:4.3.1'
 //	implementation 'org.webjars:bootstrap:5.0.2'
 //	implementation 'org.webjars:font-awesome:5.13.0'
-	implementation 'com.github.darrachequesne:spring-data-jpa-datatables:5.2.0'
+//	implementation 'com.github.darrachequesne:spring-data-jpa-datatables:5.2.0'
 	compileOnly 'org.projectlombok:lombok'
 //	implementation 'org.hibernate.validator:hibernate-validator:8.0.0.Final'
 	implementation 'org.hibernate.validator:hibernate-validator'

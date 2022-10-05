@@ -3,10 +3,24 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <title>User Dashboard</title>
-    <link rel="stylesheet" th:href="@{/assets/css/bootstrap.min.css}">
-    <link rel="stylesheet" th:href="@{/assets/css/all.min.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/assets/css/bootstrap.min.css}"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/assets/css/all.min.css}"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/assets/css/style.css}"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/assets/css/datatables.min.css}"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/assets/css/fixedHeader.dataTables.min.css}"/>
+
     <script type="text/javascript" language="javascript" src="/assets/js/jquery.min.js"></script>
     <script type="text/javascript" language="javascript" src="/assets/js/bootstrap.min.js"></script>
+    <script type="text/javascript" language="javascript" src="/assets/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" language="javascript" src="/assets/js/dataTables.bootstrap4.min.js"></script>
+    <script type="text/javascript" language="javascript" src="/assets/js/dataTables.fixedHeader.min.js"></script>
+    <script type="text/javascript" language="javascript" src="/assets/js/datatable.js"></script>
+
+    <style type="text/css" class="init">
+    thead input {
+        width: 100%;
+    }
+  </style>
 </head>
 <body>
 <div th:replace="fragments/basic :: navbar"></div>
@@ -74,87 +88,5 @@
     </tr>
     </tbody>
 </table>
-<!--  Following two lines pull from remote, added local resources for them below -->
-<!--  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css">-->
-<!--  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/fixedheader/3.2.3/css/fixedHeader.dataTables.min.css">-->
-<link rel="stylesheet" type="text/css" href="@{/assets/css/jquery.dataTables.min.css}">
-<link rel="stylesheet" type="text/css" href="@{/assets/css/fixedHeader.dataTables.min.css}">
-<link rel="stylesheet" type="text/css" th:href="@{/assets/css/style.css}" />
-<style type="text/css" class="init">
-	thead input {
-		width: 100%;
-	}
-  </style>
-<!--  Following three lines pull from remote, added local resources for them below -->
-<!--  <script type="text/javascript" language="javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>-->
-<!--  <script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>-->
-<!--  <script type="text/javascript" language="javascript" src="https://cdn.datatables.net/fixedheader/3.2.3/js/dataTables.fixedHeader.min.js"></script>-->
-<script type="text/javascript" language="javascript" src="/assets/js/jquery-3.5.1.js"></script>
-<script type="text/javascript" language="javascript" src="/assets/js/jquery.dataTables.min.js"></script>
-<script type="text/javascript" language="javascript" src="/assets/js/dataTables.fixedHeader.min.js"></script>
-<script type="text/javascript" class="init">
-    $(document).ready(function () {
-        // Setup - add a text input to each footer cell
-        $('#productTable thead tr')
-            .clone(true)
-            .addClass('filters')
-            .appendTo('#productTable thead');
-
-        var table = $('#productTable').DataTable({
-            orderCellsTop: true,
-            fixedHeader: true,
-            initComplete: function () {
-                var api = this.api();
-
-                // For each column
-                api
-                    .columns()
-                    .eq(0)
-                    .each(function (colIdx) {
-                        // Set the header cell to contain the input element
-                        var cell = $('.filters th').eq(
-                            $(api.column(colIdx).header()).index()
-                        );
-                        var title = $(cell).text();
-                        $(cell).html('<input type="text" placeholder="' + title + '" />');
-
-                        // On every keypress in this input
-                        $(
-                            'input',
-                            $('.filters th').eq($(api.column(colIdx).header()).index())
-                        )
-                            .off('keyup change')
-                            .on('change', function (e) {
-                                // Get the search value
-                                $(this).attr('title', $(this).val());
-                                var regexr = '({search})'; //$(this).parents('th').find('select').val();
-
-                                var cursorPosition = this.selectionStart;
-                                // Search the column for that value
-                                api
-                                    .column(colIdx)
-                                    .search(
-                                        this.value != ''
-                                            ? regexr.replace('{search}', '(((' + this.value + ')))')
-                                            : '',
-                                        this.value != '',
-                                        this.value == ''
-                                    )
-                                    .draw();
-                            })
-                            .on('keyup', function (e) {
-                                e.stopPropagation();
-
-                                $(this).trigger('change');
-                                $(this)
-                                    .focus()[0]
-                                    .setSelectionRange(cursorPosition, cursorPosition);
-                            });
-                    });
-            },
-        });
-    });
-  </script>
-
 </body>
 </html>
