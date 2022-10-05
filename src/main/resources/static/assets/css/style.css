@@ -2,3 +2,33 @@
 .table-striped>tbody>tr:nth-child(odd)>th {
    background-color: #D8DEE9; // Choose your own color here
  }
+thead input {
+ width: 100%;
+ }
+.navbar-custom {
+ background-color: #434C5E !important;
+ }
+.navbar-custom .navbar-brand,
+.navbar-custom .navbar-text {
+ color: #ECEFF4;
+ }
+.navbar-nav .nav-item .nav-link {
+ color: #ECEFF4;
+ }
+.navbar-nav .nav-item.active .nav-link,
+.navbar-nav .nav-item:hover .nav-link {
+ color: #D8DEE9;
+ }
+.thead-custom {
+   color:#D8DEE9;background-color:#434C5E;
+ }
+.gradient-custom {
+/* fallback for old browsers */
+background: #5E81AC;
+
+/* Chrome 10-25, Safari 5.1-6 */
+background: -webkit-linear-gradient(to bottom, rgba(94, 129, 172, 1), rgba(76, 86, 106, 1));
+
+/* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+background: linear-gradient(to bottom, rgba(94, 129, 172, 1), rgba(76, 86, 106, 1))
+}

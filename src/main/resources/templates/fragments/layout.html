@@ -14,9 +14,9 @@
 
   <link rel="stylesheet" type="text/css" th:href="@{/assets/css/bootstrap.min.css}"/>
   <link rel="stylesheet" type="text/css" th:href="@{/assets/css/all.min.css}"/>
-  <link rel="stylesheet" type="text/css" th:href="@{/assets/css/style.css}"/>
   <link rel="stylesheet" type="text/css" th:href="@{/assets/css/datatables.min.css}"/>
   <link rel="stylesheet" type="text/css" th:href="@{/assets/css/fixedHeader.dataTables.min.css}"/>
+  <link rel="stylesheet" type="text/css" th:href="@{/assets/css/style.css}"/>
 
   <script type="text/javascript" language="javascript" src="/assets/js/jquery.min.js"></script>
   <script type="text/javascript" language="javascript" src="/assets/js/bootstrap.min.js"></script>
@@ -25,16 +25,33 @@
   <script type="text/javascript" language="javascript" src="/assets/js/dataTables.fixedHeader.min.js"></script>
   <script type="text/javascript" language="javascript" src="/assets/js/datatable.js"></script>
 
-  <style type="text/css" class="init">
-    thead input {
-        width: 100%;
-    }
-  </style>
+<!--  <style type="text/css" class="init">-->
+<!--    thead input {-->
+<!--        width: 100%;-->
+<!--    }-->
+<!--    .navbar-custom {-->
+<!--        background-color: #434C5E !important;-->
+<!--    }-->
+<!--    .navbar-custom .navbar-brand,-->
+<!--    .navbar-custom .navbar-text {-->
+<!--        color: #ECEFF4;-->
+<!--    }-->
+<!--    .navbar-nav .nav-item .nav-link {-->
+<!--        color: #ECEFF4;-->
+<!--    }-->
+<!--    .navbar-nav .nav-item.active .nav-link,-->
+<!--    .navbar-nav .nav-item:hover .nav-link {-->
+<!--        color: #D8DEE9;-->
+<!--    }-->
+<!--    .thead-custom {-->
+<!--          color:#D8DEE9;background-color:#434C5E;-->
+<!--    }-->
+<!--  </style>-->
 
 </head>
 
   <body>
-    <nav class="navbar navbar-dark bg-dark navbar-expand-sm mb-3" th:fragment="navbar">
+    <nav class="navbar navbar-custom bg-dark navbar-expand-sm mb-3" th:fragment="navbar">
 
       <a class="navbar-brand" href="/">COTSFOSS Product Management</a>
 

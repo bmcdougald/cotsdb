@@ -5,9 +5,9 @@
     <title>User Dashboard</title>
     <link rel="stylesheet" type="text/css" th:href="@{/assets/css/bootstrap.min.css}"/>
     <link rel="stylesheet" type="text/css" th:href="@{/assets/css/all.min.css}"/>
-    <link rel="stylesheet" type="text/css" th:href="@{/assets/css/style.css}"/>
     <link rel="stylesheet" type="text/css" th:href="@{/assets/css/datatables.min.css}"/>
     <link rel="stylesheet" type="text/css" th:href="@{/assets/css/fixedHeader.dataTables.min.css}"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/assets/css/style.css}"/>
 
     <script type="text/javascript" language="javascript" src="/assets/js/jquery.min.js"></script>
     <script type="text/javascript" language="javascript" src="/assets/js/bootstrap.min.js"></script>
@@ -16,17 +16,12 @@
     <script type="text/javascript" language="javascript" src="/assets/js/dataTables.fixedHeader.min.js"></script>
     <script type="text/javascript" language="javascript" src="/assets/js/datatable.js"></script>
 
-    <style type="text/css" class="init">
-    thead input {
-        width: 100%;
-    }
-  </style>
 </head>
 <body>
 <div th:replace="fragments/basic :: navbar"></div>
 
 <table class="table table-bordered table-hover table-striped" id="productTable">
-    <thead class="thead-dark">
+    <thead class="thead-custom">
     <tr>
         <th width="5%">ID</th>
         <th width="5%">Environment</th>
