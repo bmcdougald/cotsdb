@@ -2,65 +2,96 @@
 <html xmlns:th="http://www.thymeleaf.org">
 
 <head th:replace="fragments/layout :: head('Update Product')">
+  <link rel="stylesheet" th:href="@{/assets/css/bootstrap.min.css}">
+  <link rel="stylesheet" th:href="@{/assets/css/all.min.css}">
+  <link rel="stylesheet" type="text/css" th:href="@{/assets/css/style.css}"/>
+  <script type="text/javascript" language="javascript" src="/assets/js/jquery.min.js"></script>
+  <script type="text/javascript" language="javascript" src="/assets/js/bootstrap.min.js"></script>
 </head>
 
-<body>
-
+<body class="vh-100 gradient-custom">
   <div th:replace="fragments/layout :: navbar"></div>
+  <div class="container py-5 h-99">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-24 col-md-18 col-lg-12 col-xl-12">
+        <div class="card bg-dark text-white" style="border-radius: 1rem; height: 40rem;">
+          <div class="card-body p-5 text-center">
+            <div class="mb-md-5 mt-md-4 pb-5">
+              <h2 class="fw-bold mb-2 text-uppercase">Update a Product</h2>
+              <p class="text-white-50 mb-5">Mandatory fields are REQUIRED!</p>
 
-  <form action="#" th:action="@{/licenses/{id}/update/(id=${license.id})}" th:object="${license}" method="post">
-    <div class="col-sm-12">
-      <div class="form-group">
-        <p>Update a Product</p>
-        <input type="hidden" th:field="*{id}" />
-        <label for="environment">Environment <span class="badge badge-danger">Mandatory</span></label>
-        <input type="text" id="environment" class="form-control" placeholder="(Example) PRD, CLD, etc" th:field="*{environment}" />
-        <span th:if="${#fields.hasErrors('environment')}" th:errors="*{environment}" style="color: red"></span>
-        <br/>
-        <label for="product_name">Product Name <span class="badge badge-danger">Mandatory</span></label>
-        <input type="text" id="product_name" class="form-control" placeholder="(Example) Redhat Server 7.9" th:field="*{product_name}" />
-        <span th:if="${#fields.hasErrors('product_name')}" th:errors="*{product_name}" style="color: red"></span>
-        <br/>
-        <label for="vendor">Vendor </label>
-        <input type="text" id="vendor" class="form-control" placeholder="(Example) Atlassian" th:field="*{vendor}" />
-        <span th:if="${#fields.hasErrors('vendor')}" th:errors="*{vendor}" style="color: red"></span>
-        <br/>
-        <label for="version">Version <span class="badge badge-danger">Mandatory</span></label>
-        <input type="text" id="version" class="form-control" placeholder="(Example) 7.9.0" th:field="*{version}" />
-        <span th:if="${#fields.hasErrors('version')}" th:errors="*{version}" style="color: red"></span>
-        <br/>
-        <label for="license_key">License Key </label>
-        <input type="text" id="license_key" class="form-control" placeholder="<license key value>" th:field="*{license_key}" />
-        <span th:if="${#fields.hasErrors('license_key')}" th:errors="*{license_key}" style="color: red"></span>
-        <br/>
-        <label for="start_date">Start </label>
-        <input type="date" id="start_date" class="form-control" placeholder="<yyyy-mm-dd>" th:field="*{start_date}" />
-        <span th:if="${#fields.hasErrors('start_date')}" th:errors="*{start_date}" style="color: red"></span>
-        <br/>
-        <label for="expiration_date">Expiration </label>
-        <input type="date" id="expiration_date" class="form-control" placeholder="<yyyy-mm-dd>" th:field="*{expiration_date}" />
-        <span th:if="${#fields.hasErrors('expiration_date')}" th:errors="*{expiration_date}" style="color: red"></span>
-        <br/>
-        <label for="equipment">Host </label>
-        <input type="text" id="equipment" class="form-control" placeholder="<Hostname-follow with (VM) if its a VM>" th:field="*{equipment}" />
-        <span th:if="${#fields.hasErrors('equipment')}" th:errors="*{equipment}" style="color: red"></span>
-        <br/>
-        <label for="media_type">Media Type </label>
-        <input type="text" id="media_type" class="form-control" placeholder="(Example) Digital, DVD, etc" th:field="*{media_type}" />
-        <span th:if="${#fields.hasErrors('media_type')}" th:errors="*{media_type}" style="color: red"></span>
-        <br/>
-        <label for="po_number">PO Number </label>
-        <input type="text" id="po_number" class="form-control" placeholder="<PO or Contract # for the purchase>" th:field="*{po_number}" />
-        <span th:if="${#fields.hasErrors('po_number')}" th:errors="*{po_number}" style="color: red"></span>
+              <form action="#" th:action="@{/licenses/{id}/update/(id=${license.id})}" th:object="${license}" method="post">
+                <div class="form-group row">
+                  <div>
+                    <input type="hidden" th:field="*{id}" />
+                  </div>
+                  <div class="form-outline form-white mb-4 col-sm-4">
+                    <label for="product_name">Product Name <span class="badge badge-danger">Mandatory</span></label>
+                    <input type="text" id="product_name" class="form-control" placeholder="(Example) Redhat Server" th:field="*{product_name}" />
+                    <span th:if="${#fields.hasErrors('product_name')}" th:errors="*{product_name}" style="color: red"></span>
+                  </div>
+                  <div class="form-outline form-white mb-4 col-sm-4">
+                    <label for="vendor">Vendor <span class="badge badge-danger">Mandatory</span></label>
+                    <input type="text" id="vendor" class="form-control" placeholder="(Example) Atlassian" th:field="*{vendor}" />
+                    <span th:if="${#fields.hasErrors('vendor')}" th:errors="*{vendor}" style="color: red"></span>
+                  </div>
+                  <div class="form-outline form-white mb-4 col-sm-4">
+                    <label for="version">Version <span class="badge badge-danger">Mandatory</span></label>
+                    <input type="text" id="version" class="form-control" placeholder="(Example) 7.9.0" th:field="*{version}" />
+                    <span th:if="${#fields.hasErrors('version')}" th:errors="*{version}" style="color: red"></span>
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <div class="form-outline form-white mb-4 col-sm-4">
+                    <label for="license_key">License Key </label>
+                    <input type="text" id="license_key" class="form-control" placeholder="<license key value>" th:field="*{license_key}" />
+                    <span th:if="${#fields.hasErrors('license_key')}" th:errors="*{license_key}" style="color: red"></span>
+                  </div>
+                  <div class="form-outline form-white mb-4 col-sm-4">
+                    <label for="start_date">Start </label>
+                    <input type="date" id="start_date" class="form-control" placeholder="<yyyy-mm-dd>" th:field="*{start_date}" />
+                    <span th:if="${#fields.hasErrors('start_date')}" th:errors="*{start_date}" style="color: red"></span>
+                  </div>
+                  <div class="form-outline form-white mb-4 col-sm-4">
+                    <label for="expiration_date">Expiration </label>
+                    <input type="date" id="expiration_date" class="form-control" placeholder="<yyyy-mm-dd>" th:field="*{expiration_date}" />
+                    <span th:if="${#fields.hasErrors('expiration_date')}" th:errors="*{expiration_date}" style="color: red"></span>
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <div class="form-outline form-white mb-4 col-sm-4">
+                    <label for="environment">Environment <span class="badge badge-danger">Mandatory</span></label>
+                    <input type="text" id="environment" class="form-control" placeholder="(Example) PRD, CLD, etc" th:field="*{environment}" />
+                    <span th:if="${#fields.hasErrors('environment')}" th:errors="*{environment}" style="color: red"></span>
+                  </div>
+                  <div class="form-outline form-white mb-4 col-sm-4">
+                    <label for="equipment">Host </label>
+                    <input type="text" id="equipment" class="form-control" placeholder="<Hostname-follow with (VM) if its a VM>" th:field="*{equipment}" />
+                    <span th:if="${#fields.hasErrors('equipment')}" th:errors="*{equipment}" style="color: red"></span>
+                  </div>
+                  <div class="form-outline form-white mb-4 col-sm-2">
+                    <label for="media_type">Media Type </label>
+                    <input type="text" id="media_type" class="form-control" placeholder="(Example) Digital, DVD, etc" th:field="*{media_type}" />
+                    <span th:if="${#fields.hasErrors('media_type')}" th:errors="*{media_type}" style="color: red"></span>
+                  </div>
+                  <div class="form-outline form-white mb-4 col-sm-2">
+                    <label for="po_number">PO Number </label>
+                    <input type="text" id="po_number" class="form-control" placeholder="<PO or Contract # for the purchase>" th:field="*{po_number}" />
+                    <span th:if="${#fields.hasErrors('po_number')}" th:errors="*{po_number}" style="color: red"></span>
+                  </div>
+                </div>
 
+                <button type="submit" class="btn btn-primary" style="margin:5px;">Confirm</button>
+                <a class="btn btn-danger" th:href="@{/licenses/{id}/delete/(id=${license.id})}"
+                   onClick="return window.confirm('Are you sure you want to delete Product?')">Delete
+                  <i class="far fa-trash-alt fa-lg" aria-hidden=”true” style='color:white'></i>
+                </a>
+              </form>
+            </div>
+          </div>
+        </div>
       </div>
-
-      <button type="submit" class="btn btn-primary" style="margin:5px;">Confirm</button>
-      <button class="btn btn-danger" style="margin:5px;">Delete<a th:href="@{/licenses/{id}/delete/(id=${license.id})}" onClick="return window.confirm('Are you sure you want to delete Product?')">
-        <i class="far fa-trash-alt fa-lg" aria-hidden=”true” style='color:white'></i></a>
-      </button>
-    </div>    
-  </form>
-
+    </div>
+  </div>
 </body>
 </html>
