@@ -32,3 +32,16 @@ background: -webkit-linear-gradient(to bottom, rgba(94, 129, 172, 1), rgba(76, 8
 /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 background: linear-gradient(to bottom, rgba(94, 129, 172, 1), rgba(76, 86, 106, 1))
 }
+
+#productTable_info, .dataTables_paginate {
+    width: 50%;
+    display: inline-block;
+}
+div#productTable_paginate {
+    padding-top: 0.85em;
+}
+
+div.dt-buttons {
+float: right;
+margin-left:10px;
+}

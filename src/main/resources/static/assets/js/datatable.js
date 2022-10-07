@@ -7,9 +7,13 @@ $(document).ready(function () {
             .appendTo('#productTable thead');
 
         var table = $('#productTable').DataTable({
-            dom: 'Bfrtip',
+            dom:  "<'row'<'col-md-6'l><'col-md-6'Bf>>" +
+                 "<'row'<'col-md-6'><'col-md-6'>>" +
+                 "<'row'<'col-md-12't>><'row'<'col-md-12'ip>>",
+            lengthChange: true,
+            lengthMenu: [ [ 10, 25, 50, -1 ], [ '10 rows', '25 rows', '50 rows', 'Show all' ] ],
             buttons: [
-              'pageLength',
+//              'pageLength',  --This produces an empty picklist???
               'excelHtml5',
               'csvHtml5',
               'pdfHtml5',
@@ -68,6 +72,6 @@ $(document).ready(function () {
                     });
             },
         });
-        table.buttons().container()
-                .appendTo( '#productTable_wrapper .col-md-6:eq(0)' );
+//        table.buttons().container()
+//                .appendTo( '#productTable_wrapper .col-md-6:eq(0)' );
     });
