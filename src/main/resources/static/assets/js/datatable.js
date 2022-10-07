@@ -1,4 +1,5 @@
 $(document).ready(function () {
+
         // Setup - add a text input to each footer cell
         $('#productTable thead tr')
             .clone(true)
@@ -6,10 +7,19 @@ $(document).ready(function () {
             .appendTo('#productTable thead');
 
         var table = $('#productTable').DataTable({
+            dom: 'Bfrtip',
+            buttons: [
+              'pageLength',
+              'excelHtml5',
+              'csvHtml5',
+              'pdfHtml5',
+              'print'
+            ],
             orderCellsTop: true,
             fixedHeader: true,
             initComplete: function () {
                 var api = this.api();
+
 
                 // For each column
                 api
