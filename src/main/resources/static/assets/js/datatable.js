@@ -68,4 +68,6 @@ $(document).ready(function () {
                     });
             },
         });
+        table.buttons().container()
+                .appendTo( '#productTable_wrapper .col-md-6:eq(0)' );
     });
