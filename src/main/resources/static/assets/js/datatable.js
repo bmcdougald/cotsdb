@@ -12,13 +12,42 @@ $(document).ready(function () {
                   "<'row'<'col-md-12't>><'row'<'col-md-12'ip>>",
             lengthChange: true,
             lengthMenu: [ [ 10, 25, 50, -1 ], [ '10 rows', '25 rows', '50 rows', 'Show all' ] ],
-            buttons: [
-//              'pageLength',  --This produces an empty picklist???
-              'excelHtml5',
-              'csvHtml5',
-              'pdfHtml5',
-              'print'
-            ],
+
+            buttons: {
+                        dom: {
+                            button: {
+                                className: 'btn btn-custom'
+                            }
+                        },
+                        buttons: [
+                            {
+                                //EXCEL
+                                extend: 'excelHtml5',
+                                text: '<i class="fas fa-file-excel"></i> EXCEL', //u can define a different text or icon
+                                title: 'Product List',
+                            },
+                            {
+                                //CSV
+                                extend: 'csvHtml5',
+                                text: '<i class="fas fa-file-csv"></i> CSV',
+                                title: 'Product List',
+                            },
+                            {
+                                //PDF
+                                extend: 'pdfHtml5',
+                                text: '<i class="fas fa-file-pdf"></i> PDF',
+                                title: 'Product List',
+                            },
+                            {
+                                //PRINT
+                                extend: 'print',
+                                text: '<i class="fas fa-print"></i> PRINT',
+                                title: 'Product List',
+                            }
+                        ]
+                    },
+
+
             orderCellsTop: true,
             fixedHeader: true,
             initComplete: function () {

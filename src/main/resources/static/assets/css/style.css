@@ -45,3 +45,10 @@ div.dt-buttons {
 float: left;
 margin-left:0px;
 }
+
+.btn-custom {
+  color: #fff;
+  background-color: #81A1C1;
+  border-radius: 35px;
+  border: 1px solid rgba(94, 129, 172, 0.75);
+}
